@@ -3,6 +3,7 @@ package br.com.caelum.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,5 +27,18 @@ public class OiMundo extends HttpServlet {
 		out.println("<h1>Oi mundo Servlet!</h1>");
 		out.println("</body>");
 		out.println("</html>");
+		
+		System.out.println("SERVICE");
+	}
+	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+		System.out.println("INIT");
+	}
+	@Override
+	public void destroy() {
+		super.destroy();
+		System.out.println("DESTROY");
 	}
 }
