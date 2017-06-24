@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Form</title>
-<style>
+	<link href="css/jquery.css" rel="stylesheet">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	
+	<style>
 
 	* {
 	margin: 0;
@@ -13,7 +17,7 @@
 	
 	h1 {
 		text-align: center;
-		margin: 50px 0 50px 0;
+		margin: 1px 0 1px 0;
 	}
 	
 	.form {
@@ -50,7 +54,12 @@
 	}
 </style>
 </head>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="caelum" %>
 <body>
+
+	<c:import url="cabecalho.jsp" />
+
 	<h1>Adiciona Contatos</h1>
 	<hr/>
 	
@@ -61,13 +70,16 @@
 		<label for="email" class="text">Email:</label>
 		<input type="text" name="email" class="text input"/>
 		
-		<label for="endereco" class="text">EndereÃ§o:</label>
+		<label for="endereco" class="text">Endereço:</label>
 		<input type="text" name="endereco" class="text input"/>
 		
 		<label for="dataNascimento" class="text">Data Nascimento:</label>
-		<input type="text" name="dataNascimento" class="text input"/>
+		<caelum:campoData id="dataNascimento" />
 		
 		<input type="submit" value="Gravar" class="button"/>
 	</form>
+	
+	<c:import url="rodape.jsp" />
+	
 </body>
 </html>
